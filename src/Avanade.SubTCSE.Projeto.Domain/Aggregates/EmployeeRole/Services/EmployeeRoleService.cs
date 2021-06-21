@@ -6,7 +6,7 @@ namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Services
     {
         public void AddEmployeeRole(Entities.EmployeeRole employeeRole)
         {
-            throw new System.NotImplementedException("calma o coração");
+            throw new System.NotImplementedException();
         }
     }
 }
