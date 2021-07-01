@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿
+using FluentValidation;
 
 namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Validators
 {
@@ -8,9 +9,9 @@ namespace Avanade.SubTCSE.Projeto.Domain.Aggregates.EmployeeRole.Validators
         {
             RuleSet("new", () =>
             {
-                RuleFor(e=>e.RoleName)
+                RuleFor(e => e.RoleName)
                 .NotEmpty()
-                .WithMessage("{PropertyName} can not be empty")
+                .WithMessage("{PropertyName} can not be empty");
             });
         }
     }
