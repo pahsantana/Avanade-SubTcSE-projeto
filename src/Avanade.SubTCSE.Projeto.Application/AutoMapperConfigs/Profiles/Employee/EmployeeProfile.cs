@@ -2,12 +2,12 @@
 
 namespace Avanade.SubTCSE.Projeto.Application.AutoMapperConfigs.Profiles.Employee
 {
-    class EmployeeProfile : Profile
+    public class EmployeeProfile : Profile
     {
         public EmployeeProfile()
         {
             CreateMap<Dtos.Employee.EmployeeDto, Domain.Aggregates.Employee.Entities.Employee>()
-                .ConstructUsing((ctor,res)=>
+                .ConstructUsing((ctor, res) =>
                 {
                     return new Domain.Aggregates.Employee.Entities.Employee(
                         firstName: ctor.PrimeiroNome,
@@ -15,9 +15,10 @@ namespace Avanade.SubTCSE.Projeto.Application.AutoMapperConfigs.Profiles.Employe
                         birthday: ctor.Aniversario,
                         active: ctor.Ativo,
                         salary: ctor.Salario,
-                        employeeRole: res.Mapper.Map<Domain.Aggregates.EmployeeRole.Entities.EmployeeRole>(ctor.Cargo);
-            })
-            .ForAllOtherMembers(i=>i.Ignore());
+                        employeeRole: res.Mapper.Map<Domain.Aggregates.EmployeeRole.Entities.EmployeeRole>(ctor.Cargo));
+                })
+                .ForAllOtherMembers(i => i.Ignore());
+
             CreateMap<Domain.Aggregates.Employee.Entities.Employee, Dtos.Employee.EmployeeDto>()
                 .ForMember(dest => dest.Identificador, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.PrimeiroNome, opt => opt.MapFrom(src => src.FirstName))
