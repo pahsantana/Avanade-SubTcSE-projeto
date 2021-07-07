@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.SubTCSE.Projeto.Api\Avanade.SubTCSE.Projeto.Api.csproj" />
+    <ProjectReference Include="..\Avanade.SubTCSE.Projeto.Application\Avanade.SubTCSE.Projeto.Application.csproj" />
+    <ProjectReference Include="..\Avanade.SubTCSE.Projeto.CrossCutting\Avanade.SubTCSE.Projeto.CrossCutting.csproj" />
+    <ProjectReference Include="..\Avanade.SubTCSE.Projeto.Domain\Avanade.SubTCSE.Projeto.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
